@@ -1,0 +1,6 @@
+framework module Pods_Vesti_ru {
+  umbrella header "Pods-Vesti.ru-umbrella.h"
+
+  export *
+  module * { export * }
+}

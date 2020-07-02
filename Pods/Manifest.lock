@@ -1,0 +1,20 @@
+PODS:
+  - AEXML (4.5.0)
+  - SwiftDate (6.1.0)
+
+DEPENDENCIES:
+  - AEXML
+  - SwiftDate
+
+SPEC REPOS:
+  trunk:
+    - AEXML
+    - SwiftDate
+
+SPEC CHECKSUMS:
+  AEXML: 0e8f1d874fa033ca6b3909452a8bc362faad46e6
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+
+PODFILE CHECKSUM: b0c481d2d9f567c44a2acd5cc5b2ca294f93ac95
+
+COCOAPODS: 1.9.3
