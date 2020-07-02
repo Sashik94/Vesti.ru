@@ -10,7 +10,7 @@
         <!--Вести.Ru-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="AppVelox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="Vesti_ru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="6fJ-pA-FPb" customClass="ListTableViewCell" customModule="AppVelox" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="6fJ-pA-FPb" customClass="ListTableViewCell" customModule="Vesti_ru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="69.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6fJ-pA-FPb" id="5aV-pE-6A1">
@@ -99,7 +99,7 @@
         <!--Record View Controller-->
         <scene sceneID="f3j-Fi-Dqt">
             <objects>
-                <viewController id="6h6-xd-NS5" customClass="RecordViewController" customModule="AppVelox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6h6-xd-NS5" customClass="RecordViewController" customModule="Vesti_ru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bj0-xq-ucO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,19 +108,25 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="01N-0M-hqR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" priority="750" id="nY4-oy-TRw"/>
                                             <constraint firstAttribute="width" secondItem="01N-0M-hqR" secondAttribute="height" multiplier="16:9" id="qRc-F7-zHZ"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qRc-F7-zHZ"/>
+                                            </mask>
+                                        </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqp-vj-UKO">
-                                        <rect key="frame" x="8" y="219" width="40.333333333333336" height="26.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqp-vj-UKO">
+                                        <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fullText" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVP-gT-plb">
-                                        <rect key="frame" x="8" y="253.33333333333331" width="47" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVP-gT-plb">
+                                        <rect key="frame" x="8" y="16" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -134,6 +140,7 @@
                                     <constraint firstItem="UVP-gT-plb" firstAttribute="top" secondItem="Pqp-vj-UKO" secondAttribute="bottom" constant="8" id="Uxq-OA-wx6"/>
                                     <constraint firstItem="Pqp-vj-UKO" firstAttribute="leading" secondItem="kC5-73-PAg" secondAttribute="leading" constant="8" id="XYt-bN-1bk"/>
                                     <constraint firstItem="kC5-73-PAg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pqp-vj-UKO" secondAttribute="trailing" constant="8" id="aLL-aM-fNn"/>
+                                    <constraint firstItem="Pqp-vj-UKO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4LT-eX-6Qk" secondAttribute="top" id="auZ-mI-DW1"/>
                                     <constraint firstItem="Pqp-vj-UKO" firstAttribute="top" secondItem="01N-0M-hqR" secondAttribute="bottom" constant="8" id="eRp-0b-8JY"/>
                                     <constraint firstItem="kC5-73-PAg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UVP-gT-plb" secondAttribute="trailing" constant="8" id="iIC-fm-tQi"/>
                                     <constraint firstItem="01N-0M-hqR" firstAttribute="centerX" secondItem="4LT-eX-6Qk" secondAttribute="centerX" id="mJG-qR-AhM"/>
@@ -159,6 +166,7 @@
                     <navigationItem key="navigationItem" id="1oD-IW-8Yb"/>
                     <connections>
                         <outlet property="fullTextLabel" destination="UVP-gT-plb" id="X7O-JY-Dbl"/>
+                        <outlet property="imageOnLayoutConstraint" destination="qRc-F7-zHZ" id="SQV-pE-jvU"/>
                         <outlet property="mainImageView" destination="01N-0M-hqR" id="886-dC-zAf"/>
                         <outlet property="mainScrllView" destination="4LT-eX-6Qk" id="BSb-CB-ZYB"/>
                         <outlet property="mainView" destination="bj0-xq-ucO" id="6ur-XM-aMm"/>
@@ -167,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6S-Mz-Did" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="137"/>
+            <point key="canvasLocation" x="2021.5999999999999" y="136.69950738916256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xcM-5r-kM2">
@@ -191,7 +199,7 @@
         <!--Selection View Controller-->
         <scene sceneID="juf-eU-PdQ">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="GkL-Zw-2LY" customClass="SelectionViewController" customModule="AppVelox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="GkL-Zw-2LY" customClass="SelectionViewController" customModule="Vesti_ru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vbn-cz-4po">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +244,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Selection" rowHeight="43.666667938232422" id="0QV-IR-uev" customClass="SelectionTableViewCell" customModule="AppVelox" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Selection" rowHeight="43.666667938232422" id="0QV-IR-uev" customClass="SelectionTableViewCell" customModule="Vesti_ru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0QV-IR-uev" id="2GT-fp-4no">

@@ -14,9 +14,9 @@ public class Parser {
     
     public static func parse(xmlURL: URL, onSuccess: @escaping (Channel) -> (), onNotFound: @escaping () -> (), onFailure: @escaping (Error?) -> ()) {
         DispatchQueue.global(qos: .default).async {
-            guard let xmlData = try? Data(contentsOf: xmlURL) else { return }
+//            let xmlData = try? Data(contentsOf: xmlURL)
             do {
-                let xmlDoc = try AEXMLDocument(xml: xmlData)
+                let xmlDoc = try AEXMLDocument(xml: try Data(contentsOf: xmlURL))
                 var existChannel = false
                 
                 for child in xmlDoc.root.children {

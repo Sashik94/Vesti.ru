@@ -52,6 +52,7 @@ class ListViewController: UIViewController {
         }, onNotFound: {
             print("onNotFound")
         }, onFailure: { (error) in
+            self.errorAlert(with: error?.localizedDescription ?? "Ошибка соединения с интернетом")
         })
     }
     
@@ -71,6 +72,21 @@ class ListViewController: UIViewController {
                 categories.append(item.categories!)
             }
         }
+    }
+    
+    func errorAlert(with title: String) {
+        let alertController = UIAlertController(title: title, message: "Повторите попытку.", preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Закрыть", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+          exit(0)
+        })
+        let tryAgainAction = UIAlertAction(title: "Повторить", style: .default) { [weak self] (_) in
+            self?.loadRSS()
+        }
+        
+        alertController.addAction(tryAgainAction)
+        alertController.addAction(closeAction)
+        
+        present(alertController, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

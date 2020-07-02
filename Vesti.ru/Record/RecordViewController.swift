@@ -16,18 +16,45 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var fullTextLabel: UILabel!
+    @IBOutlet weak var imageOnLayoutConstraint: NSLayoutConstraint!
     
     var item: Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        load()
+    }
+    
+    func load() {
         if let urlImage = item.urlImage {
             if let url = URL(string: urlImage) {
-                mainImageView.image = UIImage(data: try! Data(contentsOf: url))
+                
+                if let imageData = try? Data(contentsOf: url) {
+                    imageOnLayoutConstraint.isActive = true
+                    mainImageView.image = UIImage(data: imageData)
+                    
+                    titleLabel.text = item.title!
+                    fullTextLabel.text = item.fullText
+                } else {
+                    errorAlert(with: "Ошибка соединения с интернетом")
+                }
             }
         }
-        titleLabel.text = "   " + item.title!
-        fullTextLabel.text = item.fullText
+    }
+    
+    func errorAlert(with title: String) {
+        let alertController = UIAlertController(title: title, message: "Повторите попытку.", preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Закрыть", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
+        let tryAgainAction = UIAlertAction(title: "Повторить", style: .default) { [weak self] (_) in
+            self?.load()
+        }
+        
+        alertController.addAction(tryAgainAction)
+        alertController.addAction(closeAction)
+        
+        present(alertController, animated: true)
     }
 }
